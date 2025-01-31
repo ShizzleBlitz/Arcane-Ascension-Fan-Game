@@ -1,0 +1,302 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Art assets/walk animation/frame0007.png" type="Texture" id=1]
+[ext_resource path="res://Art assets/walk animation/frame0005.png" type="Texture" id=2]
+[ext_resource path="res://Model.gd" type="Script" id=3]
+[ext_resource path="res://Art assets/walk animation/frame0000.png" type="Texture" id=4]
+[ext_resource path="res://Art assets/walk animation/frame0002.png" type="Texture" id=5]
+[ext_resource path="res://Art assets/walk animation/frame0006.png" type="Texture" id=6]
+[ext_resource path="res://Art assets/walk animation/frame0001.png" type="Texture" id=7]
+[ext_resource path="res://Art assets/walk animation/frame0004.png" type="Texture" id=8]
+[ext_resource path="res://Art assets/walk animation/frame0003.png" type="Texture" id=9]
+[ext_resource path="res://Art assets/sword animation/frame0000.png" type="Texture" id=10]
+[ext_resource path="res://Art assets/sword animation/frame0001.png" type="Texture" id=11]
+[ext_resource path="res://Art assets/sword animation/frame0002.png" type="Texture" id=12]
+[ext_resource path="res://Art assets/sword animation/frame0003.png" type="Texture" id=13]
+[ext_resource path="res://Art assets/sword animation/frame0004.png" type="Texture" id=14]
+[ext_resource path="res://Art assets/Fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/m5x7/m5x7.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Tileset.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0007.png" type="Texture" id=17]
+[ext_resource path="res://Old code/Dude.gd" type="Script" id=18]
+[ext_resource path="res://Old code/NAVI.gd" type="Script" id=19]
+[ext_resource path="res://Sound Effects/Dash_longer.wav" type="AudioStream" id=20]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0000.png" type="Texture" id=21]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0003.png" type="Texture" id=22]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0005.png" type="Texture" id=23]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0002.png" type="Texture" id=24]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0004.png" type="Texture" id=25]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0006.png" type="Texture" id=26]
+[ext_resource path="res://Art assets/NPCs and Enemies/Slimes/frame0001.png" type="Texture" id=27]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.8156, 6.0752 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 2.69757 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 2.4034 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ null, ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), null ],
+"loop": true,
+"name": "Swing",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.60834, 7.9825 )
+
+[sub_resource type="NavigationPolygon" id=9]
+vertices = PoolVector2Array( 792.372, -249.497, 793.263, -211.188, 386.727, -214.975, 385.978, -247.938, 544.05, -249.437, 634.683, -249.497, 351.378, -762.654, 825.336, -761.764, 824.445, -545.275, 632.902, -547.948, 544.703, -550.62, 870.771, -212.079, 872.609, 123.028, 302.822, 122.144, 305.07, -214.975, 350.487, -551.511 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 1 ), PoolIntArray( 1, 13, 14, 2 ), PoolIntArray( 9, 5, 4, 10 ), PoolIntArray( 6, 10, 15 ) ]
+outlines = [ PoolVector2Array( 302.822, 122.144, 305.07, -214.975, 386.727, -214.975, 385.978, -247.938, 544.05, -249.437, 544.703, -550.62, 350.487, -551.511, 351.378, -762.654, 825.336, -761.764, 824.445, -545.275, 632.902, -547.948, 634.683, -249.497, 792.372, -249.497, 793.263, -211.188, 870.771, -212.079, 872.609, 123.028 ) ]
+
+[node name="Main" type="Node2D"]
+position = Vector2( -180.61, 366.79 )
+
+[node name="Map" parent="." instance=ExtResource( 16 )]
+position = Vector2( 252.509, -66.6747 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 581.7, -45.1824 )
+scale = Vector2( 1, 1.01171 )
+z_index = 1
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.707237, 0.798802 )
+scale = Vector2( 1, 0.988425 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2( 1.31732, -8.08869 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.941818, 9.24203 )
+shape = SubResource( 3 )
+
+[node name="SwordObject" type="Area2D" parent="Player"]
+
+[node name="Sword Model" type="AnimatedSprite" parent="Player/SwordObject"]
+position = Vector2( -4.27193, -17.8655 )
+scale = Vector2( 1.1, 1.1 )
+frames = SubResource( 4 )
+animation = "Swing"
+speed_scale = 13.0
+
+[node name="Sword_collision" type="CollisionPolygon2D" parent="Player/SwordObject"]
+position = Vector2( -5.61831, -22.6816 )
+polygon = PoolVector2Array( -14.9338, 8.65945, -46.5525, -21.5375, -19.2391, -34.4679, 3.828, -40.0498, 28.8985, -32.8352, 55.8942, -17.0951, 31.9214, 11.5987, 4.88751, -0.553429 )
+disabled = true
+
+[node name="outer border" type="Polygon2D" parent="Player"]
+visible = false
+scale = Vector2( 0.6, 0.6 )
+color = Color( 0.113725, 0.0941176, 0.2, 1 )
+antialiased = true
+polygon = PoolVector2Array( -153.324, 103.322, -213.824, 76.6345, -229.324, -82.0078, -216.824, -122.039, 205.676, -131.429, 222.676, 2.00836, 174.676, 114.689 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="inner border" type="Polygon2D" parent="Player/outer border"]
+position = Vector2( -0.5, 0.494202 )
+color = Color( 0.141176, 0.105882, 0.278431, 1 )
+antialiased = true
+polygon = PoolVector2Array( -151.415, 99.2108, -202.29, 65.5487, -224.994, -82.3984, -195.983, -111.905, 183.682, -108.164, 216.056, -1.35999, 145.841, 106.691 )
+
+[node name="status screen" type="Polygon2D" parent="Player/outer border/inner border"]
+position = Vector2( 3.36853, 0.994568 )
+antialiased = true
+polygon = PoolVector2Array( 47.6101, -106.685, 178.151, -104.361, 210.105, -2.12833, 141.783, 102.807, 46.6146, 98.3049 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Player/outer border/inner border/status screen"]
+position = Vector2( -52.2867, -2.17935 )
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+antialiased = true
+polygon = PoolVector2Array( 101.288, -102.879, 227.666, -100.428, 231.131, -89.22, 232.81, -83.1751, 101.76, -86.0859 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/outer border/inner border/status screen/Polygon2D"]
+margin_left = 144.612
+margin_top = -102.68
+margin_right = 218.612
+margin_bottom = -77.6797
+rect_rotation = 2.0
+rect_scale = Vector2( 1.5, 1.2 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "Status"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dash Sound" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 20 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
+position = Vector2( 0.836241, 12.848 )
+scale = Vector2( 1, 0.988425 )
+emitting = false
+amount = 40
+lifetime = 6.0
+speed_scale = 28.0
+emission_shape = 2
+emission_rect_extents = Vector2( 20, 20 )
+gravity = Vector2( 0, 4 )
+scale_amount = 2.0
+color = Color( 0.976471, 0.301961, 1, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0.0650635, 1.06189 )
+current = true
+zoom = Vector2( 0.35, 0.35 )
+process_mode = 0
+
+[node name="Model" type="AnimatedSprite" parent="Player"]
+position = Vector2( 0.0495605, 0.0706482 )
+scale = Vector2( 0.873363, 0.878725 )
+frames = SubResource( 6 )
+animation = "walk"
+frame = 7
+speed_scale = 3.0
+
+[node name="Health" type="ProgressBar" parent="Player"]
+visible = false
+margin_left = -175.212
+margin_top = 74.1787
+margin_right = -41.2121
+margin_bottom = 88.1787
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana" type="ProgressBar" parent="Player"]
+visible = false
+anchor_right = 1.0
+margin_left = -175.677
+margin_top = 88.1877
+margin_right = -41.6769
+margin_bottom = 102.188
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( -0.0240784, -0.279434 )
+
+[node name="Enemy" type="Area2D" parent="Enemies"]
+position = Vector2( 358.587, -163.48 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Enemysprite" type="AnimatedSprite" parent="Enemies/Enemy"]
+modulate = Color( 1, 0.0823529, 0.0823529, 1 )
+frames = SubResource( 7 )
+animation = "walk"
+frame = 7
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
+position = Vector2( 0.0578613, 3.53554 )
+shape = SubResource( 8 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Enemies/Enemy"]
+modulate = Color( 1, 1, 1, 0.678431 )
+emitting = false
+amount = 60
+lifetime = 1.5
+speed_scale = 2.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2( 0, 0 )
+radial_accel = 45.0
+scale_amount = 3.0
+
+[node name="Enemy2" type="Area2D" parent="Enemies"]
+position = Vector2( 771.897, 56.336 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Enemysprite" type="AnimatedSprite" parent="Enemies/Enemy2"]
+modulate = Color( 1, 0.0823529, 0.0823529, 1 )
+frames = SubResource( 7 )
+animation = "walk"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
+position = Vector2( 0.0271302, 3.46001 )
+shape = SubResource( 8 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Enemies/Enemy2"]
+modulate = Color( 1, 1, 1, 0.678431 )
+emitting = false
+amount = 60
+lifetime = 1.5
+preprocess = 64.0
+speed_scale = 2.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2( 0, 0 )
+orbit_velocity_random = 1.0
+radial_accel = 40.0
+scale_amount = 3.0
+
+[node name="EnemyNav" type="Navigation2D" parent="Enemies"]
+position = Vector2( 12.8694, -2.27109 )
+script = ExtResource( 19 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Enemies/EnemyNav"]
+position = Vector2( -13.3172, 4.76497 )
+navpoly = SubResource( 9 )
+
+[node name="Line2D" type="Line2D" parent="Enemies/EnemyNav"]
+
+[node name="Death Camera" type="Camera2D" parent="."]
+position = Vector2( 581.765, -44.1081 )
+scale = Vector2( 1, 1.01171 )
+current = true
+zoom = Vector2( 0.35, 0.35 )
+process_mode = 0
+
+[connection signal="area_entered" from="Player/SwordObject" to="Player" method="_on_SwordObject_area_entered"]
